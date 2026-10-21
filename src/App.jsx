@@ -87,6 +87,8 @@ const [tasks, setTasks] = useState(() => {
     return initialTasks
   }
 })
+const [jobType, setJobType] = useState('All')
+const [jobMode, setJobMode] = useState('All')
   const [mobileMenu, setMobileMenu] = useState(false)
   const [notice, setNotice] = useState('')
   useEffect(() => {
@@ -103,6 +105,8 @@ useEffect(() => {
     const matchesSearch = `${job.title} ${job.company} ${job.skills.join(' ')}`
       .toLowerCase()
       .includes(search.toLowerCase())
+      const matchesType = jobType === 'All' || job.type === jobType
+const matchesMode = jobMode === 'All' || job.mode === jobMode
 
     if (activePage === 'Saved Jobs') {
       return savedJobs.includes(job.id) && matchesSearch
