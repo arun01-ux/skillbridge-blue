@@ -1,8 +1,8 @@
 // Run from frontend directory: node --test src/matching/matchingEngine.test.js
 import test from "node:test";
 import assert from "node:assert/strict";
-import { extractSkills, parseSkillList, calculateMatch, analyzeCandidate } from "./matchingEngine.js";
-import { generateRoadmap } from "./roadmap.js";
+import { extractSkills, parseSkillList, calculateMatch, analyzeCandidate } from "./machineEngine.js";
+import { generateRoadmap } from "./roadMap.js";
 
 test("extracts known skills", () => {
   assert.deepEqual(extractSkills("BCA student with SQL, Excel and Python"), ["Excel", "Python", "SQL"]);
@@ -29,3 +29,4 @@ test("generates roadmap tasks", () => {
   assert.equal(tasks.length, 2);
   assert.ok(tasks[0].resource.startsWith("https://"));
 });
+
