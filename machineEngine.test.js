@@ -1,4 +1,4 @@
-// Run from frontend directory: node --test src/matching/matchingEngine.test.js
+// Run from project directory: node --test machineEngine.test.js
 import test from "node:test";
 import assert from "node:assert/strict";
 import { extractSkills, parseSkillList, calculateMatch, analyzeCandidate } from "./machineEngine.js";
@@ -29,4 +29,3 @@ test("generates roadmap tasks", () => {
   assert.equal(tasks.length, 2);
   assert.ok(tasks[0].resource.startsWith("https://"));
 });
-

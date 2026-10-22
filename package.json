@@ -1,3 +1,4 @@
+
 {
   "name": "skillbridge-blue",
   "version": "1.0.0",
@@ -5,13 +6,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "start": "node server.js",
+    "server:dev": "nodemon server.js",
+    "seed": "node seed.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^1.61.0",
+    "mongoose": "^8.9.5",
     "pdfjs-dist": "^6.4.299",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vite": "^8.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
