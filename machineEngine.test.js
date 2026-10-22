@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { extractSkills, parseSkillList, calculateMatch, analyzeCandidate } from "./matchingEngine.js";
-import { generateRoadmap } from "./roadmap.js";
+import { generateRoadmap } from "./roadMap.js";
 
 test("extracts known skills", () => {
   assert.deepEqual(extractSkills("BCA student with SQL, Excel and Python"), ["Excel", "Python", "SQL"]);
