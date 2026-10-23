@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from 'react'
 import {
   LayoutDashboard,
@@ -18,6 +18,7 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
+import ResumeAnalyzer from './ResumeAnalyzer.jsx'
 
 const jobs = [
   {
@@ -238,9 +239,9 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
 
           <section className="welcome-heading">
             <div>
-              <p className="eyebrow">WEDNESDAY · YOUR CAREER SPACE</p>
+              <p className="eyebrow">WEDNESDAY Â· YOUR CAREER SPACE</p>
               <h1>
-                Hey, Future Champion <span className="wave">✦</span>
+                Hey, Future Champion <span className="wave">âœ¦</span>
               </h1>
               <p className="page-subtitle">
                 Your next big opportunity starts with one small step.
@@ -271,13 +272,15 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
               <div className="hero-circle circle-back" />
               <div className="hero-circle circle-front" />
               <div className="hero-glass-card">
-                <div className="hero-rocket">🚀</div>
-                <span className="floating-star star-one">✦</span>
-                <span className="floating-star star-two">✧</span>
+                <div className="hero-rocket">ðŸš€</div>
+                <span className="floating-star star-one">âœ¦</span>
+                <span className="floating-star star-two">âœ§</span>
               </div>
               <div className="floating-chip"><CheckCircle2 size={16} /> Skills growing!</div>
             </div>
           </section>
+
+          <ResumeAnalyzer jobs={jobs} />
 
           <section className="stats-grid">
             <div className="stat-card">
@@ -381,7 +384,7 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
                       </div>
                       <div className="job-info">
                         <h3>{job.title}</h3>
-                        <p className="job-company">{job.company} <span>·</span> {job.mode}</p>
+                        <p className="job-company">{job.company} <span>Â·</span> {job.mode}</p>
                         <p className="job-description">{job.description}</p>
                         <div className="job-tags">
                           <span className="tag">{job.type}</span>
@@ -432,7 +435,7 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
                     <p className="eyebrow">YOUR MOMENTUM</p>
                     <h2>Profile progress</h2>
                   </div>
-                  <span className="progress-emoji">✧</span>
+                  <span className="progress-emoji">âœ§</span>
                 </div>
 
                 <div className="progress-summary">
@@ -443,7 +446,7 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
                     </div>
                   </div>
                   <div className="progress-copy">
-                    <strong>You’re on your way!</strong>
+                    <strong>Youâ€™re on your way!</strong>
                     <p>Complete your tasks to get job-ready.</p>
                   </div>
                 </div>
@@ -488,7 +491,7 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
 
           <footer className="page-footer">
             <span>Made with care for your future <Heart size={13} /></span>
-            <span>SkillBridge · Student Career Dashboard</span>
+            <span>SkillBridge Â· Student Career Dashboard</span>
           </footer>
         </main>
       </div>
@@ -497,3 +500,4 @@ const matchesMode = jobMode === 'All' || job.mode === jobMode
 }
 
 export default App
+
