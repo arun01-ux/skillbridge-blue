@@ -1,9 +1,9 @@
-ï»¿import { useState } from 'react'
+import { useState } from 'react'
 import { FileText, Upload, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react'
 import { extractResumeText } from '../resumeParser.js'
 import { analyzeCandidate, calculateMatch } from '../machineEngine.js'
 
-function ResumeAnalyzer({ jobs }) {
+function ResumeAnalyzer({ jobs, onAnalysisComplete }) {
   const [selectedFile, setSelectedFile] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -42,6 +42,7 @@ function ResumeAnalyzer({ jobs }) {
 
       setSkills(detectedSkills)
       setResults(jobResults)
+      onAnalysisComplete?.({ detectedSkills, results: jobResults })
       setAnalyzed(true)
 
       if (detectedSkills.length === 0) {
@@ -68,7 +69,7 @@ function ResumeAnalyzer({ jobs }) {
       <div className="resume-upload-area">
         <div className="resume-upload-icon"><Upload size={23} /></div>
         <h3>Upload your resume</h3>
-        <p>Choose a PDF or TXT file Â· Maximum 5 MB</p>
+        <p>Choose a PDF or TXT file · Maximum 5 MB</p>
         <label className="resume-file-label">
           <input
             type="file"
@@ -130,7 +131,7 @@ function ResumeAnalyzer({ jobs }) {
                 <div className="resume-match-top">
                   <div>
                     <h4>{job.title}</h4>
-                    <p>{job.company} Â· {job.type} Â· {job.mode}</p>
+                    <p>{job.company} · {job.type} · {job.mode}</p>
                   </div>
                   <strong>{job.match.score}%</strong>
                 </div>
@@ -151,3 +152,4 @@ function ResumeAnalyzer({ jobs }) {
 }
 
 export default ResumeAnalyzer
+
